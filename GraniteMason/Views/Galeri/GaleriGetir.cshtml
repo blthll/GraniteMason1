@@ -1,0 +1,23 @@
+﻿@model GraniteMason.Models.Entity.TblGalleryPhoto
+@{
+    ViewBag.Title = "GaleriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Anasayfa Galeri Resim Guncelleme Sayfasi</h4>
+<br />
+<form method="post">
+    @Html.Label("Galeri Resim")
+    @Html.TextBoxFor(x => x.GaleriResim, new { @class = "form-control" })
+    <br />
+    @Html.Label("Galeri Resim Kategori");
+    @Html.TextBoxFor(x => x.GaleriKategori, new { @class = "form-control" })
+    <br />
+    @Html.Label("Galeri Resim Aciklama");
+    @Html.TextAreaFor(x => x.GaleriAciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Guncelle</button>
+</form>
+
+

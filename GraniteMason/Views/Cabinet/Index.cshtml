@@ -1,0 +1,31 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblCabinetsGallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CabinetResim Ve Aciklamalar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Resim</th>
+        <th>Baslik</th>
+        <th>Fiyat</th>
+        <th>Sil</th>
+        <th>Duzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.GaleriResim</td>
+            <td>@item.GaleriBaslik</td>
+            <td>@item.GaleriFiyat</td>
+            <td><a href="/Cabinet/CabinetSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Cabinet/CabinetGetir/@item.ID" class="btn btn-warning">Duzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Cabinet/CabinetEkle/" class="btn btn-primary">Cabinet Ekle</a>

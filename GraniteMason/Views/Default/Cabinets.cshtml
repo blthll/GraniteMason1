@@ -1,0 +1,64 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblCabinetsGallery>
+@{
+    ViewBag.Title = "Cabinets";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+<!-- Masthead-->
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Cabinet Mason Homepage</title>
+</head>
+<body id="page-top">
+    @Html.Partial("Navbar")
+    <header class="cabinet">
+        <div class="container">
+            <div class="masthead-subheading">In Stock Cabinets | Lowest Price | Next Day Delivery | Springfield VA!</div>
+            <div class="masthead-heading text-uppercase">Cabinets</div>
+        </div>
+    </header>
+    <!-- Section 3 Products -->
+    <section class="product">
+        <div class="container">
+            <div class="row py-5 ">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1> What's Trending</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+
+
+                    <div class="col-lg-3 text-center">
+                        <div class="card border-0 bg-light mb-2">
+                            <div class="card-body">
+                                <img src="@item.GaleriResim" class="img-fluid">
+                            </div>
+                        </div>
+                        <h6>@item.GaleriBaslik</h6>
+                        <p>@item.GaleriFiyat</p>
+                    </div>
+                    }
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 text-center m-auto">
+                        <button class="btn1">Click For More</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Section 6 Apple -->
+    <section class="apple">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="font-weight-bold py-3">Unlock Your Potential With Good Products</h1>
+                    <h6 style="">You deserve the quality</h6>
+                    <a href="contact.html"> <button class="btn1 mt-3">Contact Us</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+

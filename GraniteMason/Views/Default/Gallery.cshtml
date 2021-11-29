@@ -1,0 +1,59 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblGalleryPhoto>
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+<!-- Masthead-->
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Cabinet Mason Homepage</title>
+
+</head>
+<body id="page-top">
+    @Html.Partial("Navbar")
+    <header class="gallery1">
+        <div class="container">
+            <div class="masthead-subheading">See Our Products!</div>
+            <div class="masthead-heading text-uppercase">Products</div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row py-5 ">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1> Our Gallery</h1>
+                </div>
+            </div>
+    </section>
+
+    <div class="wrapper">
+        <!-- filter Items -->
+        <nav>
+            <div class="items">
+                <span class="item active" data-name="all">All</span>
+                @Html.Action("GalleryCategory")
+            </div>
+        </nav>
+        <!-- filter Images -->
+        <div class="gallery">
+            @foreach (var item in Model)
+            {
+                <div class="image" data-name="@item.GaleriKategori"><span><img src="@item.GaleriResim" alt=""></span></div>
+            }
+        </div>
+    </div>
+    <!-- fullscreen img preview box -->
+    @foreach (var item in Model)
+    {
+
+
+    <div class="preview-box">
+        <div class="details">
+            <span class="title">Image Category: <p>@item.GaleriKategori</p> <p>@item.GaleriAciklama</p></span>
+            <span class="icon fas fa-times"></span>
+        </div>
+        <div class="image-box"><img src="" alt=""></div>
+    </div>
+    }
+    <div class="shadow"></div>

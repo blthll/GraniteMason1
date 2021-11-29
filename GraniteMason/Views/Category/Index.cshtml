@@ -1,0 +1,28 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Islemleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Duzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Kategori</td>
+            <td><a href="/Category/CategorySil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/CategoryGetir/@item.ID" class="btn btn-warning">Duzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Category/CategoryEkle/" class="btn btn-primary">Yeni Kategori Ekle</a>
+

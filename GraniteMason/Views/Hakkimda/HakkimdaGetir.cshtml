@@ -1,0 +1,27 @@
+﻿@model GraniteMason.Models.Entity.TblAbout
+@{
+    ViewBag.Title = "HakkimdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Deneyim Guncelleme Sayfasi</h4>
+<br />
+<form method="post">
+    @Html.Label("Resim1")
+    @Html.TextBoxFor(x => x.Resim1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim2");
+    @Html.TextBoxFor(x => x.Resim2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Aciklama 1");
+    @Html.TextAreaFor(x => x.Aciklama1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Aciklama 2");
+    @Html.TextAreaFor(x => x.Aciklama2, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Guncelle</button>
+</form>
+
+
+

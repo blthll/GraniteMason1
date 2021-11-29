@@ -1,0 +1,6 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblCategory>
+@foreach (var item in Model)
+{
+    <span class="item" data-name="@item.Kategori">@item.Kategori</span>
+}

@@ -1,0 +1,20 @@
+﻿@model GraniteMason.Models.Entity.TblGalleryPhoto
+@{
+    ViewBag.Title = "GaleriEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Galeri Resim Ekleme Sayfasi</h4>
+<br />
+<form method="post">
+    <input type="text" name="GaleriResim" class="form-control" placeholder="Resim giriniz" />
+    <br />
+    @Html.DropDownListFor(m => m.GaleriKategori, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+    <textarea placeholder="Aciklamanizi giriniz" name="GaleriAciklama" class="form-control" rows="5"></textarea>
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+

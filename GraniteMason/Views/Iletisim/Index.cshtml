@@ -1,0 +1,32 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblContact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Iletisim Ekrani</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Isim</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Mesaj</th>
+        <th>Tarih</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Isim</td>
+            <td>@item.Email</td>
+            <td>@item.Telefon</td>
+            <td>@item.Aciklama</td>
+            <td>@item.Tarih</td>
+
+        </tr>
+    }
+</table>

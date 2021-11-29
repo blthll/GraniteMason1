@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbCabinetMasonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SliderResim" Type="varchar" MaxLength="100" />
+          <Property Name="SliderBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="Aciklama1" Type="varchar(max)" />
+          <Property Name="Resim1" Type="varchar" MaxLength="100" />
+          <Property Name="Aciklama2" Type="varchar(max)" />
+          <Property Name="Resim2" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbCabinetMason.dbo.TblAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="250" />
+          <Property Name="Sifre" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblCabinets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SliderResim" Type="varchar" MaxLength="100" />
+          <Property Name="SliderBaslik" Type="varchar" MaxLength="250" />
+          <Property Name="SliderAltBaslik" Type="varchar" MaxLength="250" />
+          <Property Name="SliderResim2" Type="varchar" MaxLength="250" />
+          <Property Name="SliderBaslik2" Type="varchar" MaxLength="250" />
+          <Property Name="SliderAltBaslik2" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblCabinetsGallery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GaleriResim" Type="varchar" MaxLength="250" />
+          <Property Name="GaleriBaslik" Type="varchar" MaxLength="250" />
+          <Property Name="GaleriFiyat" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kategori" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Isim" Type="varchar" MaxLength="250" />
+          <Property Name="Telefon" Type="varchar" MaxLength="250" />
+          <Property Name="Tarih" Type="date" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblGallery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SliderResim" Type="varchar" MaxLength="250" />
+          <Property Name="SliderBaslik" Type="varchar" MaxLength="250" />
+          <Property Name="SliderAltBaslik" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblGalleryPhoto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GaleriResim" Type="varchar" MaxLength="250" />
+          <Property Name="GaleriKategori" Type="varchar" MaxLength="250" />
+          <Property Name="GaleriAciklama" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblHome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SliderBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="SliderAltBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="SliderResim" Type="varchar" MaxLength="250" />
+          <Property Name="HakkindaTarih1" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaBaslik1" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaAciklama1" Type="varchar" MaxLength="250" />
+          <Property Name="HakkindaResim1" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaTarih2" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaAciklama2" Type="varchar" MaxLength="250" />
+          <Property Name="HakkindaResim2" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaBaslik2" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaBaslik3" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaTarih3" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaAciklama3" Type="varchar" MaxLength="250" />
+          <Property Name="HakkindaResim3" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaBaslik4" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaTarih4" Type="varchar" MaxLength="100" />
+          <Property Name="HakkindaAciklama4" Type="varchar" MaxLength="250" />
+          <Property Name="HakkindaResim4" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblHomeGallery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GaleriResim" Type="varchar" MaxLength="100" />
+          <Property Name="GaleriBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="GaleriAltBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="GaleriAciklama" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="DbCabinetMasonModelStoreContainer">
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCabinets" EntityType="Self.TblCabinets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCabinetsGallery" EntityType="Self.TblCabinetsGallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblContact" EntityType="Self.TblContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblGallery" EntityType="Self.TblGallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblGalleryPhoto" EntityType="Self.TblGalleryPhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHome" EntityType="Self.TblHome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblHomeGallery" EntityType="Self.TblHomeGallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblAdmin].[ID] AS [ID], 
+    [TblAdmin].[KullaniciAdi] AS [KullaniciAdi], 
+    [TblAdmin].[Sifre] AS [Sifre]
+    FROM [dbo].[TblAdmin] AS [TblAdmin]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbCabinetMasonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderResim" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SliderBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblCabinet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderResim" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SliderBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderAltBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderResim2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderBaslik2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderAltBaslik2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblCabinetsGallery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GaleriResim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriFiyat" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kategori" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Telefon" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Isim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TblGallery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderResim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SliderAltBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblGalleryPhoto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GaleriResim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriKategori" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriAciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblHome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SliderBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SliderAltBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SliderResim" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaTarih1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaBaslik1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaAciklama1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaResim1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaTarih2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaAciklama2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaResim2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaBaslik2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaBaslik3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaTarih3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaAciklama3" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaResim3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaBaslik4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaTarih4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaAciklama4" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HakkindaResim4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblHomeGallery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GaleriResim" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriAltBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GaleriAciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DbCabinetMasonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAbouts" EntityType="Self.TblAbout" />
+          <EntitySet Name="TblCabinets" EntityType="Self.TblCabinet" />
+          <EntitySet Name="TblCabinetsGalleries" EntityType="Self.TblCabinetsGallery" />
+          <EntitySet Name="TblCategories" EntityType="Self.TblCategory" />
+          <EntitySet Name="TblContacts" EntityType="Self.TblContact" />
+          <EntitySet Name="TblGalleries" EntityType="Self.TblGallery" />
+          <EntitySet Name="TblGalleryPhotoes" EntityType="Self.TblGalleryPhoto" />
+          <EntitySet Name="TblHomes" EntityType="Self.TblHome" />
+          <EntitySet Name="TblHomeGalleries" EntityType="Self.TblHomeGallery" />
+          <EntitySet Name="TblAdmins" EntityType="DbCabinetMasonModel.TblAdmin" />
+        </EntityContainer>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbCabinetMasonModelStoreContainer" CdmEntityContainer="DbCabinetMasonEntities">
+          <EntitySetMapping Name="TblAbouts">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblAbout">
+              <MappingFragment StoreEntitySet="TblAbout">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SliderResim" ColumnName="SliderResim" />
+                <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="Resim1" ColumnName="Resim1" />
+                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
+                <ScalarProperty Name="Resim2" ColumnName="Resim2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCabinets">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblCabinet">
+              <MappingFragment StoreEntitySet="TblCabinets">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SliderResim" ColumnName="SliderResim" />
+                <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+                <ScalarProperty Name="SliderAltBaslik" ColumnName="SliderAltBaslik" />
+                <ScalarProperty Name="SliderResim2" ColumnName="SliderResim2" />
+                <ScalarProperty Name="SliderBaslik2" ColumnName="SliderBaslik2" />
+                <ScalarProperty Name="SliderAltBaslik2" ColumnName="SliderAltBaslik2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCabinetsGalleries">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblCabinetsGallery">
+              <MappingFragment StoreEntitySet="TblCabinetsGallery">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GaleriResim" ColumnName="GaleriResim" />
+                <ScalarProperty Name="GaleriBaslik" ColumnName="GaleriBaslik" />
+                <ScalarProperty Name="GaleriFiyat" ColumnName="GaleriFiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCategories">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblCategory">
+              <MappingFragment StoreEntitySet="TblCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblContacts">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblContact">
+              <MappingFragment StoreEntitySet="TblContact">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Isim" ColumnName="Isim" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblGalleries">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblGallery">
+              <MappingFragment StoreEntitySet="TblGallery">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SliderResim" ColumnName="SliderResim" />
+                <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+                <ScalarProperty Name="SliderAltBaslik" ColumnName="SliderAltBaslik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblGalleryPhotoes">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblGalleryPhoto">
+              <MappingFragment StoreEntitySet="TblGalleryPhoto">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GaleriResim" ColumnName="GaleriResim" />
+                <ScalarProperty Name="GaleriKategori" ColumnName="GaleriKategori" />
+                <ScalarProperty Name="GaleriAciklama" ColumnName="GaleriAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHomes">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblHome">
+              <MappingFragment StoreEntitySet="TblHome">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SliderBaslik" ColumnName="SliderBaslik" />
+                <ScalarProperty Name="SliderAltBaslik" ColumnName="SliderAltBaslik" />
+                <ScalarProperty Name="SliderResim" ColumnName="SliderResim" />
+                <ScalarProperty Name="HakkindaTarih1" ColumnName="HakkindaTarih1" />
+                <ScalarProperty Name="HakkindaBaslik1" ColumnName="HakkindaBaslik1" />
+                <ScalarProperty Name="HakkindaAciklama1" ColumnName="HakkindaAciklama1" />
+                <ScalarProperty Name="HakkindaResim1" ColumnName="HakkindaResim1" />
+                <ScalarProperty Name="HakkindaTarih2" ColumnName="HakkindaTarih2" />
+                <ScalarProperty Name="HakkindaAciklama2" ColumnName="HakkindaAciklama2" />
+                <ScalarProperty Name="HakkindaResim2" ColumnName="HakkindaResim2" />
+                <ScalarProperty Name="HakkindaBaslik2" ColumnName="HakkindaBaslik2" />
+                <ScalarProperty Name="HakkindaBaslik3" ColumnName="HakkindaBaslik3" />
+                <ScalarProperty Name="HakkindaTarih3" ColumnName="HakkindaTarih3" />
+                <ScalarProperty Name="HakkindaAciklama3" ColumnName="HakkindaAciklama3" />
+                <ScalarProperty Name="HakkindaResim3" ColumnName="HakkindaResim3" />
+                <ScalarProperty Name="HakkindaBaslik4" ColumnName="HakkindaBaslik4" />
+                <ScalarProperty Name="HakkindaTarih4" ColumnName="HakkindaTarih4" />
+                <ScalarProperty Name="HakkindaAciklama4" ColumnName="HakkindaAciklama4" />
+                <ScalarProperty Name="HakkindaResim4" ColumnName="HakkindaResim4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHomeGalleries">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblHomeGallery">
+              <MappingFragment StoreEntitySet="TblHomeGallery">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GaleriResim" ColumnName="GaleriResim" />
+                <ScalarProperty Name="GaleriBaslik" ColumnName="GaleriBaslik" />
+                <ScalarProperty Name="GaleriAltBaslik" ColumnName="GaleriAltBaslik" />
+                <ScalarProperty Name="GaleriAciklama" ColumnName="GaleriAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmins">
+            <EntityTypeMapping TypeName="DbCabinetMasonModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

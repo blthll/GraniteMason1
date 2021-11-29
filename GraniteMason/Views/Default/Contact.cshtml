@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+<!-- Masthead-->
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Cabinet Mason Homepage</title>
+</head>
+<body id="page-top">
+    @Html.Partial("Navbar")
+    <!-- Contact-->
+    <header class="contact">
+        <div class="container">
+            <div class="masthead-subheading">Contact Us!</div>
+            <div class="masthead-heading text-uppercase">Get in touch with us</div>
+        </div>
+    </header>
+    <section class="contact-main-second bg-light">
+        <div class="container bg-light">
+            <div class="row mt-3 shadow m-auto text-center">
+                <div class="col-md-12 bg-light">
+                    <br> Use the information below to contact Cabinet Mason.</p>
+                </div>
+            </div>
+            <div id='map' class="mt-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d100008.99684455479!2d-77.4638413!3d38.4349744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6ef0e95ae156b%3A0xe88c4b4eb3bea7f0!2s2163%20Jefferson%20Davis%20Hwy%2C%20Stafford%2C%20VA%2022554%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1631622422854!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="row p-5 ">
+                <div class="col-md-4 text-center ">
+                    <p class="font-bold">Showroom & Warehouse</p>
+                    <p class="font offset-3 col-6">2163 Jefferson Davis Hwy, Stafford, VA 22554, USA</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p class="font-bold">Showroom Hours</p>
+                    <p class="font offset-3 col-6">
+                        Monday – Friday = 8am – 5pm
+                        Saturday = 9am – 2pm
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p class="font-bold">Call Us</p>
+                    <p class="font offset-3 col-6">
+                        Phone:540-602-2022
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    @Html.Action("mailgonderme")

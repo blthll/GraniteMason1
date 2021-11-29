@@ -1,0 +1,33 @@
+﻿@using GraniteMason.Models.Entity
+@model List<TblAbout>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkimda Ekrani Aciklama Ve Resimler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Aciklama1</th>
+        <th>Resim1</th>
+        <th>Aciklama2</th>
+        <th>Resim2</th>
+        <th>Sil</th>
+        <th>Duzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Aciklama1</td>
+            <td>@item.Resim1</td>
+            <td>@item.Aciklama2</td>
+            <td>@item.Resim2</td>
+            <td><a href="/Hakkimda/HakkimdaSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Hakkimda/HakkimdaGetir/@item.ID" class="btn btn-warning">Duzenle</a></td>
+        </tr>
+    }
+</table>
+<!-- <a href="/Hakkimda/HakkimdaEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a> -->

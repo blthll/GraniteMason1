@@ -1,0 +1,25 @@
+﻿@model GraniteMason.Models.Entity.TblCabinetsGallery
+@{
+    ViewBag.Title = "CabinetGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>Cabinet Resim Guncelleme Sayfasi</h4>
+<br />
+<form method="post">
+    @Html.Label("Resim")
+    @Html.TextBoxFor(x => x.GaleriResim, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim Baslik");
+    @Html.TextBoxFor(x => x.GaleriBaslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat");
+    @Html.TextAreaFor(x => x.GaleriFiyat, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Guncelle</button>
+</form>
+
+
+
+
+
